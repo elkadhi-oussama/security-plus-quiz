@@ -40,7 +40,7 @@ const Register = () => {
 
     try {
       const { confirmPassword, ...registrationData } = formData;
-      const response = await axios.post('http://localhost:5000/api/auth/register', registrationData);
+      const response = await axios.post('https://security-plus-quiz-api.vercel.app/api/auth/register', registrationData);
       
       // Store token and user data
       localStorage.setItem('token', response.data.token);

@@ -19,7 +19,7 @@ const Quiz = () => {
       try {
         const token = localStorage.getItem('token');
         const response = await axios.get(
-          `http://localhost:5000/api/quiz/questions/${encodeURIComponent(topic)}`,
+          `https://security-plus-quiz-api.vercel.app/api/quiz/questions/${encodeURIComponent(topic)}`,
           {
             headers: { Authorization: `Bearer ${token}` }
           }

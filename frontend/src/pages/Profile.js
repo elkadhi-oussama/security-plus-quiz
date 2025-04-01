@@ -12,10 +12,10 @@ const Profile = () => {
       try {
         const token = localStorage.getItem('token');
         const [profileResponse, historyResponse] = await Promise.all([
-          axios.get('http://localhost:5000/api/users/profile', {
+          axios.get('https://security-plus-quiz-api.vercel.app/api/users/profile', {
             headers: { Authorization: `Bearer ${token}` }
           }),
-          axios.get('http://localhost:5000/api/users/quiz-history', {
+          axios.get('https://security-plus-quiz-api.vercel.app/api/users/quiz-history', {
             headers: { Authorization: `Bearer ${token}` }
           })
         ]);

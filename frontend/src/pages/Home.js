@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchTopics = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/quiz/topics');
+        const response = await axios.get('https://security-plus-quiz-api.vercel.app/api/quiz/topics');
         setTopics(response.data);
       } catch (error) {
         setError('Failed to load topics');

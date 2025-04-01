@@ -37,7 +37,7 @@ const AdminDashboard = () => {
         }
       };
 
-      const response = await axios.get('http://localhost:5000/api/quiz/topics', config);
+      const response = await axios.get('https://security-plus-quiz-api.vercel.app/api/quiz/topics', config);
       setTopics(response.data);
     } catch (error) {
       console.error('Error fetching topics:', error.response?.data || error);
@@ -61,7 +61,7 @@ const AdminDashboard = () => {
       };
 
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/admin/questions', config);
+      const response = await axios.get('https://security-plus-quiz-api.vercel.app/api/admin/questions', config);
       setQuestions(response.data);
     } catch (error) {
       console.error('Error fetching questions:', error.response?.data || error);
@@ -117,13 +117,13 @@ const AdminDashboard = () => {
 
       if (editingId) {
         await axios.put(
-          `http://localhost:5000/api/admin/questions/${editingId}`,
+          `https://security-plus-quiz-api.vercel.app/api/admin/questions/${editingId}`,
           questionData,
           config
         );
       } else {
         await axios.post(
-          'http://localhost:5000/api/admin/questions',
+          'https://security-plus-quiz-api.vercel.app/api/admin/questions',
           questionData,
           config
         );
@@ -156,7 +156,7 @@ const AdminDashboard = () => {
         }
       };
 
-      await axios.delete(`http://localhost:5000/api/admin/questions/${id}`, config);
+      await axios.delete(`https://security-plus-quiz-api.vercel.app/api/admin/questions/${id}`, config);
       fetchQuestions();
     } catch (error) {
       console.error('Error deleting question:', error.response?.data || error);
