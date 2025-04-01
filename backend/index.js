@@ -22,6 +22,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/security-
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Routes
+// Define a route for the root URL that sends a simple HTML response
+app.get("/", (req, res) => res.send("<h1>Hello Server side</h1>"));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/quiz', require('./routes/quiz'));
 app.use('/api/admin', require('./routes/admin'));
