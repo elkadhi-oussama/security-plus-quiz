@@ -49,62 +49,64 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <div className="text-center mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Login</h1>
-        <p className="mt-2 text-gray-600">
-          Don't have an account?{' '}
-          <Link to="/register" className="text-primary-600 hover:text-primary-700">
-            Register
-          </Link>
-        </p>
+    <div className="grid min-h-screen grid-rows-[auto,1fr,auto]">
+      <div className="max-w-md mx-auto mt-8 pb-80">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Login</h1>
+          <p className="mt-2 text-gray-600">
+            Don't have an account?{' '}
+            <Link to="/register" className="text-primary-600 hover:text-primary-700">
+              Register
+            </Link>
+          </p>
+        </div>
+        {error && (
+          <div className="bg-red-50 text-red-500 p-4 rounded-md mb-6">
+            {error}
+          </div>
+        )}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50"
+          >
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
+        </form>
+      
       </div>
-
-      {error && (
-        <div className="bg-red-50 text-red-500 p-4 rounded-md mb-6">
-          {error}
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-          />
-        </div>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50"
-        >
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
-      </form>
+      <footer className="text-center text-gray-600 text-lg border-t border-gray-300 pt-4 bg-gray-50">
+      Created by Elkadhi Oussama &copy; 2025
+    </footer>
     </div>
   );
 };
