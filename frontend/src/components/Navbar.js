@@ -25,12 +25,12 @@ const Navbar = () => {
           <div className="flex items-center">
             {token ? (
               <>
-                <Link
+                {/* <Link
                   to="/profile"
                   className="text-gray-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Profile
-                </Link>
+                </Link> */}
                 {user?.role === 'admin' && (
                   <Link
                     to="/admin"
