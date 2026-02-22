@@ -74,7 +74,7 @@ const Home = () => {
         ))}
       </div>
       <footer className="mt-12 text-center text-black-600 text-xl border-t pt-4">
-        Created by Elkadhi Oussama &copy; 2026
+        Created by Elkadhi Oussama &copy; 2026 at Gomycode
       </footer>
     </div>
   );
